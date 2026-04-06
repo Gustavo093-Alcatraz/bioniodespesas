@@ -22,7 +22,7 @@ const observer = new IntersectionObserver((entries) => {
         if (entry.isIntersecting) {
             entry.target.classList.add('visible');
             if (entry.target.id === 'phone') {
-                entry.target.style.transform = 'scale(1.1) rotateX(5deg)';
+                entry.target.style.transform = 'scale(1)';
             }
         }
     });
@@ -47,7 +47,7 @@ window.addEventListener('scroll', () => {
     if (phone) {
         const phonePos = phone.getBoundingClientRect().top;
         if (phonePos < 400) {
-            phone.style.transform = `scale(1) rotateX(${Math.max(0, (400 - phonePos) / 10)}deg)`;
+            phone.style.transform = `scale(1)`;
         }
     }
 });
@@ -76,22 +76,24 @@ if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
 
         // 1. Join cards and flatten rotation
         tl.to(backCard, {
-            x: 240,
-            y: -245,
+            x: 500,
+            y: -130,
             z: -10, // Force behind definitively
             rotateX: 0,
             rotateY: 0,
             rotateZ: 0,
+            scale: 1,
             duration: 1
         }, 0);
 
         tl.to(frontCard, {
-            x: 0,
+            x: 90,
             y: 0,
             z: 0,
             rotateX: 0,
             rotateY: 0,
             rotateZ: 0,
+            scale: 1,
             duration: 1
         }, 0);
 
@@ -111,17 +113,26 @@ if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
     if (processTrack && processWrapper) {
         let sections = gsap.utils.toArray(".process-step");
 
-        gsap.to(sections, {
-            xPercent: -100 * (sections.length - 1),
+        const scrollTween = gsap.to(processTrack, {
+            x: () => -(processTrack.scrollWidth - window.innerWidth),
             ease: "none",
             scrollTrigger: {
                 trigger: ".process-wrapper",
                 pin: true,
                 scrub: 1,
-                snap: 1 / (sections.length - 1),
                 start: "top top",
-                end: () => "+=" + processTrack.offsetWidth,
+                end: () => "+=" + (processTrack.scrollWidth - window.innerWidth),
                 invalidateOnRefresh: true
+            }
+        });
+
+        // --- Special Reveal for Data Blocks in Process Step 2 ---
+        ScrollTrigger.create({
+            trigger: ".glass-card",
+            start: "left center",
+            containerAnimation: scrollTween,
+            onEnter: () => {
+                document.querySelectorAll('.block').forEach(b => b.classList.add('visible'));
             }
         });
     }
@@ -144,29 +155,24 @@ if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
             }
         });
     });
-
-    // --- Staggered Reveals for Mural Cards ---
-    gsap.from(".mural-card", {
+ 
+    // --- CTA Section Animation ---
+    gsap.from(".cta-wrapper > *", {
         scrollTrigger: {
-            trigger: ".mural-section",
+            trigger: ".footer-cta",
             start: "top 70%",
         },
-        y: 50,
+        y: 30,
         opacity: 0,
-        duration: 0.8,
-        stagger: 0.2,
-        ease: "power3.out"
+        duration: 1,
+        stagger: 0.15,
+        ease: "power2.out"
     });
+ 
 
-    // --- Special Reveal for Data Blocks in Process Step 2 ---
-    ScrollTrigger.create({
-        trigger: ".glass-card",
-        start: "left center", // Triggered during horizontal scroll
-        containerAnimation: gsap.to(".process-step", { xPercent: -100 * 2 }), // Reference the horizontal scroll
-        onEnter: () => {
-            document.querySelectorAll('.block').forEach(b => b.classList.add('visible'));
-        }
-    });
+
+
+
 }
 
 
