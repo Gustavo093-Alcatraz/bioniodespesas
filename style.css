@@ -698,7 +698,8 @@ body {
     background: #1a1a1a;
 }
 .card-top-text {
-    bottom: 50px;
+    position: absolute;
+    bottom: 20px;
     left: 18px;
     z-index: 5;
     width: 300px;
