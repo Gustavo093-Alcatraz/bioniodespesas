@@ -1,0 +1,127 @@
+:root {
+    --bg-white: #FFFFFF;
+    --navy: #023A60;
+    --tangerine: #EA6606;
+    --graphite: #2D2926;
+    --glass-bg: rgba(255, 255, 255, 0.12);
+    --glass-border: rgba(255, 255, 255, 0.4);
+    --glass-blur: blur(24px);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    background-color: var(--bg-white);
+    font-family: 'Space Grotesk', sans-serif;
+    color: var(--graphite);
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+.spatial-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+    background: var(--bg-white);
+}
+
+.sphere {
+    position: absolute;
+    border-radius: 50%;
+    background: var(--navy);
+    filter: blur(120px);
+    opacity: 0.15;
+    transition: all 5s ease-in-out;
+    animation: float-sphere 25s infinite alternate;
+}
+
+.sphere-1 {
+    width: 600px;
+    height: 600px;
+    top: -100px;
+    right: -100px;
+    animation-delay: 0s;
+}
+
+.sphere-2 {
+    width: 500px;
+    height: 500px;
+    bottom: -50px;
+    left: -100px;
+    animation-delay: -5s;
+}
+
+.sphere-3 {
+    width: 400px;
+    height: 400px;
+    top: 40%;
+    left: 30%;
+    animation-delay: -10s;
+    opacity: 0.08;
+}
+
+@keyframes float-sphere {
+    0% { transform: translate(0, 0) scale(1); }
+    100% { transform: translate(100px, 50px) scale(1.1); }
+}
+
+.accent { color: var(--tangerine); }
+
+.tag {
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 2px;
+    font-weight: 700;
+    color: var(--tangerine);
+    margin-bottom: 10px;
+    display: block;
+}
+
+.btn-glass-large {
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--glass-border);
+    padding: 24px 64px;
+    border-radius: 100px;
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--graphite);
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.3s;
+    box-shadow: 0 0 0 rgba(234, 102, 6, 0);
+}
+
+.btn-glass-large:hover {
+    background: var(--tangerine);
+    color: white;
+    border-color: var(--tangerine);
+    box-shadow: 0 15px 40px rgba(234, 102, 6, 0.5);
+    transform: translateY(-5px);
+}
+
+.btn-glass {
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--glass-border);
+    color: var(--graphite);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-glass:hover {
+    background: var(--tangerine);
+    color: white;
+    border-color: var(--tangerine);
+    transform: translateY(-2px);
+}

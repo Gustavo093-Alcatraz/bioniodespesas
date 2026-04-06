@@ -1,0 +1,80 @@
+.use-cases-section {
+    padding: 100px 10%;
+    background: #fff;
+}
+
+.use-cases-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-top: 60px;
+}
+
+.case-card {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 0px;
+    align-items: stretch;
+    padding: 0;
+    min-height: 380px;
+    background: #fbfbfd;
+    border-radius: 40px;
+    transition: transform 0.4s;
+    overflow: hidden;
+}
+
+.case-card:nth-child(even) { grid-template-columns: 1fr 1.4fr; }
+.case-card:hover { transform: scale(1.01); }
+
+.case-content {
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.case-content h4 { font-size: 28px; margin-bottom: 20px; color: var(--navy); }
+.case-content p { font-size: 18px; opacity: 0.8; line-height: 1.6; margin-bottom: 30px; }
+
+.case-tag {
+    display: inline-block;
+    align-self: flex-start;
+    padding: 8px 16px;
+    background: rgba(234, 102, 6, 0.1);
+    color: var(--tangerine);
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.case-visual {
+    height: 100%;
+    background: #eee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.case-visual img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.stats-section { padding: 100px 10%; background: var(--navy); color: #fff; }
+.stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; text-align: center; }
+.stat-num { font-size: 80px; font-weight: 800; margin-bottom: 10px; display: flex; justify-content: center; align-items: baseline; }
+.stat-num span { font-size: 40px; color: var(--tangerine); }
+.stat-item p { font-size: 18px; opacity: 0.7; }
+
+.pricing-section { padding: 150px 10%; text-align: center; background: #fbfbfd; }
+.pricing-card { max-width: 500px; margin: 60px auto; padding: 80px 40px; background: #fff; border-radius: 40px; border: 1px solid rgba(0,0,0,0.05); box-shadow: 0 40px 80px rgba(0,0,0,0.05); }
+.price-value { font-size: 80px; font-weight: 800; color: var(--navy); line-height: 1; }
+.price-value span { font-size: 24px; color: var(--tangerine); }
+.price-detail { margin-top: 20px; font-size: 18px; opacity: 0.6; }
+
+@media (max-width: 992px) { .case-card { grid-template-columns: 1fr; padding: 40px; gap: 30px; } }
+@media (max-width: 768px) { .stats-grid { grid-template-columns: 1fr; } }

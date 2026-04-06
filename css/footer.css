@@ -1,0 +1,105 @@
+.faq-section {
+    padding: 100px 15%;
+    background: #ffffff;
+    text-align: center;
+}
+
+.faq-container {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.faq-container details {
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+    padding: 25px 0;
+    transition: all 0.3s;
+}
+
+.faq-container summary {
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--navy);
+    cursor: pointer;
+    list-style: none;
+    position: relative;
+    padding-right: 40px;
+}
+
+.faq-container summary::after {
+    content: '+';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 28px;
+    color: var(--tangerine);
+    transition: transform 0.4s;
+}
+
+.faq-container details[open] summary::after {
+    transform: translateY(-50%) rotate(45deg);
+}
+
+.faq-content {
+    margin-top: 20px;
+    font-size: 18px;
+    opacity: 0.7;
+    line-height: 1.6;
+    animation: fadeInSlideDown 0.4s ease-out;
+}
+
+@keyframes fadeInSlideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.footer-cta {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 100px 5%;
+    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('assets/images/cta_team_bg.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.cta-wrapper {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 80px 40px;
+    border-radius: 40px;
+    max-width: 900px;
+    text-align: center;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.2);
+}
+
+.cta-title { font-size: clamp(32px, 5vw, 56px); font-weight: 700; color: #ffffff; line-height: 1.1; margin-bottom: 24px; letter-spacing: -1px; }
+.cta-subtitle { font-size: 18px; color: rgba(255,255,255,0.8); max-width: 650px; margin: 0 auto 48px; line-height: 1.6; }
+
+.main-footer {
+    padding: 60px 0;
+    text-align: center;
+    border-top: 1px solid rgba(0,0,0,0.05);
+    background: #ffffff;
+}
+
+.main-footer p { font-size: 14px; opacity: 0.5; letter-spacing: 0.5px; }
+
+.footer-core {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: var(--navy);
+    border-radius: 50%;
+    filter: blur(100px);
+    opacity: 0.2;
+    animation: pulse-core 4s infinite alternate;
+}
+
+@keyframes pulse-core { from { transform: scale(1); opacity: 0.2; } to { transform: scale(1.3); opacity: 0.4; } }
