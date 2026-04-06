@@ -53,11 +53,91 @@
             Despesas sob controle.<br>
             <span>Negócio em movimento.</span>
         </h1>
+
+        <div class="bionio-cards-3d-wrapper">
+            <!-- Front Card -->
+            <div class="bionio-card bionio-card-front">
+                <div class="card-front-content">
+                    <div class="card-chip-nfc">
+                        <div class="chip">
+                            <div class="chip-line"></div>
+                            <div class="chip-line"></div>
+                            <div class="chip-line"></div>
+                            <div class="chip-line"></div>
+                        </div>
+                        <div class="nfc-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M4 12v8"></path><path d="M8 9v11"></path><path d="M12 6v14"></path><path d="M16 3v17"></path><path d="M20 1v19"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="card-logo">
+                        <div class="logo-stripes">
+                            <span></span><span></span><span></span><span></span><span></span>
+                        </div>
+                        <div class="logo-text">
+                            <span class="logo-bionio">bionio</span><br>
+                            <span class="logo-despesas">despesas</span>
+                        </div>
+                    </div>
+                    <div class="card-mc">
+                        <div class="mc-circle-red"></div>
+                        <div class="mc-circle-orange"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Back Card -->
+            <div class="bionio-card bionio-card-back">
+                <div class="card-top-text">Issued by Bionio Despesas under license of Mastercard International Incorporated.</div>
+                <div class="card-magstripe"></div>
+                
+                <div class="card-back-content">
+                    <div class="card-support">
+                        <div class="back-logo">
+                            <div class="logo-stripes">
+                                <span></span><span></span><span></span><span></span><span></span>
+                            </div>
+                        </div>
+                        <p>Central de atendimento</p>
+                        <p>+55 (00) 00000 00000</p>
+                        <p>contato@bioniodespesas.com.br</p>
+                    </div>
+                    
+                    <div class="card-details-row">
+                        <div class="card-numbers">0000 0000 0000 0000</div>
+                        <div class="card-hologram"></div>
+                    </div>
+                    
+                    <div class="card-bottom-row">
+                        <div class="card-validity-group">
+                            <div class="card-validity">
+                                00/00<br>
+                                <span>Data de Validade</span>
+                            </div>
+                            <div class="card-cvv">
+                                000<br>
+                                <span>Código de Segurança</span>
+                            </div>
+                        </div>
+                        <div class="card-qr">
+                            <img src="https://api.qrserver.com/v1/create-qr-code/?size=50x50&data=Bionio" alt="QR" style="width:100%; height:100%; mix-blend-mode: screen; opacity: 0.8; border-radius: 4px;">
+                        </div>
+                        <div class="card-cirrus">
+                            <div class="mc-circles-transparent">
+                                <div class="c1"></div><div class="c2"></div>
+                            </div>
+                            <span>cirrus.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
     <section class="scrolly-section">
         <span class="tag">Interface Espacial</span>
-        <h2 style="font-size: 48px; max-width: 600px; text-align: center; margin-bottom: 40px;">Fluidez pra sua gestão
+        <h2 id="scrolly-title" style="font-size: 48px; max-width: 600px; text-align: center; margin-bottom: 40px;">Fluidez pra sua gestão
         </h2>
 
         <div class="phone-mockup" id="phone">
@@ -69,6 +149,80 @@
             </div>
         </div>
 
+    </section>
+
+    <section class="process-wrapper" id="processo">
+        <div class="process-container">
+            <div class="process-track">
+                <div class="process-step step-intro">
+                    <span class="tag">Como Funciona</span>
+                    <h2 class="title-large">Gestão fluida em<br>3 simples passos.</h2>
+                    <p class="subtitle">Arraste para o lado ou use o scroll para ver a mágica acontecer.</p>
+                    <div class="scroll-hint">
+                        <div class="mouse"></div>
+                        <span>Scroll para explorar</span>
+                    </div>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-content">
+                        <div class="step-num">01</div>
+                        <h3>Capture o Comprovante</h3>
+                        <p>Aponte a câmera e o Bionio cuida do resto. Nossa IA lê dados em milissegundos.</p>
+                        <div class="step-feature">
+                            <span class="dot"></span> OCR de Alta Precisão
+                        </div>
+                    </div>
+                    <div class="step-visual">
+                        <div class="visual-card">
+                            <img src="assets/images/receipt_scan.png" alt="Scan" class="mockup-img">
+                            <div class="scan-laser"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-content">
+                        <div class="step-num">02</div>
+                        <h3>Processamento Inteligente</h3>
+                        <p>Detectamos automaticamente o valor, categoria, CNPJ e impostos da nota fiscal.</p>
+                        <div class="step-feature">
+                            <span class="dot"></span> Auditoria Antifraude
+                        </div>
+                    </div>
+                    <div class="step-visual">
+                        <div class="visual-card glass-card">
+                            <div class="data-stream">
+                                <div class="stream-line"></div>
+                                <div class="stream-line"></div>
+                                <div class="stream-line"></div>
+                            </div>
+                            <div class="data-blocks">
+                                <div class="block"><span>VALOR</span> R$ 450,00</div>
+                                <div class="block"><span>DATA</span> 12/03/26</div>
+                                <div class="block"><span>STATUS</span> Validado</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-content">
+                        <div class="step-num">03</div>
+                        <h3>Relatórios em Tempo Real</h3>
+                        <p>Dados consolidados no dashboard instantaneamente. Sem digitação manual.</p>
+                        <div class="step-feature">
+                            <span class="dot"></span> Sincronização ERP
+                        </div>
+                    </div>
+                    <div class="step-visual">
+                        <div class="visual-card">
+                            <img src="assets/images/dashboard.png" alt="Dashboard" class="mockup-img">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
     <section class="mural-section" id="recursos">
@@ -100,11 +254,30 @@
         </div>
     </section>
 
+    <section class="stats-section">
+        <div class="stats-grid">
+            <div class="stat-item">
+                <h2 class="stat-num" data-val="99">0<span>%</span></h2>
+                <p>Precisão com IA</p>
+            </div>
+            <div class="stat-item">
+                <h2 class="stat-num" data-val="60">0<span>x</span></h2>
+                <p>Mais Rápido</p>
+            </div>
+            <div class="stat-item">
+                <h2 class="stat-num" data-val="85">0<span>%</span></h2>
+                <p>Redução de Custos</p>
+            </div>
+        </div>
+    </section>
+
     <footer class="footer-cta" id="contato">
         <div class="footer-core"></div>
         <button class="btn-glass-large">Traga fluidez para sua equipe.</button>
     </footer>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script src="main.js" defer></script>
 </body>
 
