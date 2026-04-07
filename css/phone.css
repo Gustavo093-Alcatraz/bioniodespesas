@@ -97,3 +97,14 @@
 .app-nav-item span { font-size: 10px; font-weight: 500; }
 .app-nav-item.active { color: #153e5c; }
 .nav-indicator { position: absolute; top: -12px; width: 80%; height: 3px; background: #153e5c; border-radius: 0 0 4px 4px; }
+
+@media (max-width: 768px) {
+    .scrolly-section {
+        padding: 50px 5%;
+    }
+    .phone-mockup {
+        width: 300px;
+        transform: scale(0.9) !important;
+        transform-origin: top center;
+    }
+}

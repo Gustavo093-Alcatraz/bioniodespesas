@@ -82,7 +82,8 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
 
-        // --- CTA Section ---
+        /* 
+        // --- CTA Section Animation Disabled for visibility ---
         gsap.from(".cta-wrapper > *", {
             scrollTrigger: {
                 trigger: ".footer-cta",
@@ -90,5 +91,6 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             y: 30, opacity: 0, duration: 1, stagger: 0.15, ease: "power2.out"
         });
+        */
     }
 });

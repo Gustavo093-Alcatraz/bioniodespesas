@@ -76,5 +76,25 @@
 .price-value span { font-size: 24px; color: var(--tangerine); }
 .price-detail { margin-top: 20px; font-size: 18px; opacity: 0.6; }
 
-@media (max-width: 992px) { .case-card { grid-template-columns: 1fr; padding: 40px; gap: 30px; } }
-@media (max-width: 768px) { .stats-grid { grid-template-columns: 1fr; } }
+@media (max-width: 992px) { 
+    .case-card { grid-template-columns: 1fr; } 
+    .case-card:nth-child(even) { grid-template-columns: 1fr; }
+    .case-visual { min-height: 250px; }
+    .case-content { padding: 40px; }
+}
+
+@media (max-width: 768px) { 
+    .use-cases-section { padding: 60px 5%; }
+    .case-content { padding: 30px 20px; }
+    .case-content h4 { font-size: 24px; }
+    .case-content p { font-size: 16px; }
+    
+    .stats-section { padding: 60px 5%; }
+    .stats-grid { grid-template-columns: 1fr; gap: 30px; }
+    .stat-num { font-size: 50px; }
+    .stat-num span { font-size: 28px; }
+    
+    .pricing-section { padding: 80px 5%; }
+    .pricing-card { margin: 30px auto; padding: 40px 20px; }
+    .price-value { font-size: 60px; }
+}

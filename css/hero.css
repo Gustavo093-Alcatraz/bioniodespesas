@@ -274,3 +274,19 @@
 .mc-circles-transparent .c1 { z-index: 2; }
 .mc-circles-transparent .c2 { margin-left: -12px; background: rgba(255,255,255,0.9); z-index: 1; }
 .card-cirrus span { font-size: 8px; font-weight: 600; margin-top: 5px; letter-spacing: 1px; color: #fff; text-transform: lowercase; }
+
+@media (max-width: 768px) {
+    .orbit-container {
+        display: none;
+    }
+    .bionio-cards-3d-wrapper {
+        width: 100%;
+        transform: scale(0.85);
+        transform-origin: center top;
+        margin-top: 0px;
+    }
+    .hero-title {
+        font-size: clamp(32px, 12vw, 110px);
+        transform: translateY(-20px);
+    }
+}
