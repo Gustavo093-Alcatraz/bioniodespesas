@@ -67,17 +67,19 @@ document.addEventListener('DOMContentLoaded', () => {
         const stats = document.querySelectorAll('.stat-num');
         stats.forEach(stat => {
             const target = parseInt(stat.getAttribute('data-val'));
-            gsap.to(stat, {
+            const suffix = stat.querySelector('span') ? stat.querySelector('span').innerText : '';
+            const obj = { value: 0 };
+
+            gsap.to(obj, {
+                value: target,
+                duration: 2,
                 scrollTrigger: {
                     trigger: stat,
                     start: "top 80%",
+                    once: true
                 },
-                innerHTML: target,
-                duration: 2,
-                snap: { innerHTML: 1 },
                 onUpdate: function() {
-                    const suffix = stat.querySelector('span') ? stat.querySelector('span').innerText : '';
-                    stat.innerHTML = Math.ceil(this.targets()[0].innerHTML) + `<span>${suffix}</span>`;
+                    stat.innerHTML = Math.ceil(obj.value) + `<span>${suffix}</span>`;
                 }
             });
         });
