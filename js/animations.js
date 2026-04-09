@@ -79,7 +79,12 @@ document.addEventListener('DOMContentLoaded', () => {
                     once: true
                 },
                 onUpdate: function() {
-                    stat.innerHTML = Math.ceil(obj.value) + `<span>${suffix}</span>`;
+                    // XSS mitigation: avoid innerHTML, use safe DOM manipulation
+                    const spanEl = document.createElement('span');
+                    spanEl.textContent = suffix;
+                    stat.textContent = '';
+                    stat.appendChild(document.createTextNode(Math.ceil(obj.value)));
+                    stat.appendChild(spanEl);
                 }
             });
         });
